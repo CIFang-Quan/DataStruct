@@ -74,12 +74,10 @@ SearchTree Insert(ElementType X, SearchTree T)
     }
     temp->Element = X;
     temp->Left = temp->Right = NULL;
-
     if (T == NULL)
     {
         return temp;
     }
-
     Position current = T;
     Position parent = NULL;
     while (current != NULL)
@@ -95,12 +93,10 @@ SearchTree Insert(ElementType X, SearchTree T)
         }
         else
         {
-            // Element already exists, no need to insert a duplicate, free allocated memory
             free(temp);
             return T;
         }
     }
-
     if (X < parent->Element)
     {
         parent->Left = temp;
@@ -109,7 +105,6 @@ SearchTree Insert(ElementType X, SearchTree T)
     {
         parent->Right = temp;
     }
-
     return T;
 }
 
@@ -129,14 +124,11 @@ SearchTree Delete(ElementType X, SearchTree T)
             current = current->Right;
         }
     }
-
     if (current == NULL)
     {
         Error("Element not found");
-        return T; // Element X not found in the tree
+        return T;
     }
-
-    // Node with only one child or no child
     if (current->Left == NULL || current->Right == NULL)
     {
         Position newCurr;
@@ -157,7 +149,6 @@ SearchTree Delete(ElementType X, SearchTree T)
     }
     else
     {
-        // Node with two children: Get the inorder successor (smallest in the right subtree)
         Position successor = current->Right;
         Position successorParent = current;
         while (successor->Left != NULL)
@@ -166,9 +157,8 @@ SearchTree Delete(ElementType X, SearchTree T)
             successor = successor->Left;
         }
 
-        current->Element = successor->Element; // Copy the inorder successor's content to this node
+        current->Element = successor->Element;
 
-        // Delete the inorder successor
         if (successorParent != current)
             successorParent->Left = successor->Right;
         else
@@ -176,7 +166,6 @@ SearchTree Delete(ElementType X, SearchTree T)
 
         free(successor);
     }
-
     return T;
 }
 
