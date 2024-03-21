@@ -157,7 +157,6 @@ AATree Remove(ElementType Item, AATree T)
             DeletePtr = T;
             T->Right = Remove(Item, T->Right);
         }
-
         if (T == LastPtr)
         {
             if (DeletePtr != NullNode && Item == DeletePtr->Element)
@@ -168,7 +167,6 @@ AATree Remove(ElementType Item, AATree T)
                 free(LastPtr);
             }
         }
-
         else if (T->Left->Level < T->Level - 1 || T->Right->Level < T->Level - 1)
         {
             if (T->Right->Level > --T->Level)
