@@ -1,3 +1,7 @@
+#include "fatal.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef long ElementType;
 #define Infinity (30000L)
 
