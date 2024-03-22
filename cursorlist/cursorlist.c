@@ -1,6 +1,4 @@
-#include "cursor.h"
-#include <stdlib.h>
-#include "fatal.h"
+#include "cursorlist.h"
 
 struct Node
 {
