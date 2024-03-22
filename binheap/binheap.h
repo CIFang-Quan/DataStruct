@@ -1,4 +1,3 @@
-
 typedef int ElementType;
 
 #ifndef _BinHeap_H
