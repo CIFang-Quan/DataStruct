@@ -1,5 +1,4 @@
 #include "binomial.h"
-#include "fatal.h"
 
 typedef struct BinNode *Position;
 
