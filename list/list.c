@@ -1,6 +1,4 @@
 #include "list.h"
-#include <stdlib.h>
-#include "fatal.h"
 
 struct Node
 {
