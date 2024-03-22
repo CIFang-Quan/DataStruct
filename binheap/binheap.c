@@ -1,6 +1,4 @@
 #include "binheap.h"
-#include "fatal.h"
-#include <stdlib.h>
 
 #define MinData (-32767)
 
