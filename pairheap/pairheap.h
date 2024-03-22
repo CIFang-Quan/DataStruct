@@ -1,3 +1,7 @@
+#include "fatal.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef int ElementType;
 
 #ifndef _PairHeap_H
