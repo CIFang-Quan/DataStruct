@@ -1,6 +1,4 @@
 #include "leftheap.h"
-#include "fatal.h"
-#include <stdlib.h>
 
 struct TreeNode
 {
