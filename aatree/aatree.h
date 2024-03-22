@@ -1,5 +1,6 @@
-#include <stdlib.h>
 #include "fatal.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 typedef int ElementType;
 
