@@ -1,6 +1,4 @@
 #include "aatree.h"
-#include <stdlib.h>
-#include "fatal.h"
 
 Position NullNode = NULL;
 
