@@ -54,30 +54,12 @@ SplayTree Find(ElementType X, SplayTree T)
 
 SplayTree FindMin(SplayTree T)
 {
-    Position P = T;
-    if (P == NullNode)
-    {
-        return NullNode;
-    }
-    while (P->Left != NullNode)
-    {
-        P = P->Left;
-    }
-    return Splay(P->Element, T);
+    return Splay(NegInfinity, T);
 }
 
 SplayTree FindMax(SplayTree T)
 {
-    Position P = T;
-    if (P == NullNode)
-    {
-        return NullNode;
-    }
-    while (P->Right != NullNode)
-    {
-        P = P->Right;
-    }
-    return Splay(P->Element, T);
+    return Splay(Infinity, T);
 }
 
 static Position SingleRotateWithLeft(Position K2)
