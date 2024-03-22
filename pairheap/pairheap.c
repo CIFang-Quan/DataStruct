@@ -1,6 +1,4 @@
 #include "pairheap.h"
-#include "fatal.h"
-#include <stdlib.h>
 
 struct PairNode
 {
