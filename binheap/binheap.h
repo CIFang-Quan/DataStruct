@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 typedef int ElementType;
+#define MinData -1 << 30
 
 #ifndef _BinHeap_H
 #define _BinHeap_H

@@ -1,7 +1,5 @@
 #include "binheap.h"
 
-#define MinData (-32767)
-
 struct HeapStruct
 {
     int Capacity;

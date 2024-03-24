@@ -129,7 +129,7 @@ AvlTree Insert(ElementType X, AvlTree T)
     else if (X < T->Element)
     {
         T->Left = Insert(X, T->Left);
-        if (Height(T->Left) - Height(T->Right) == 2)
+        if (Height(T->Left) - Height(T->Right) > 1)
         {
             if (X < T->Left->Element)
             {
@@ -144,7 +144,7 @@ AvlTree Insert(ElementType X, AvlTree T)
     else if (X > T->Element)
     {
         T->Right = Insert(X, T->Right);
-        if (Height(T->Right) - Height(T->Left) == 2)
+        if (Height(T->Right) - Height(T->Left) > 1)
         {
             if (X > T->Right->Element)
             {
@@ -162,7 +162,65 @@ AvlTree Insert(ElementType X, AvlTree T)
 
 AvlTree Delete(ElementType X, AvlTree T)
 {
-    printf("Sorry; Delete is unimplemented; %d remains\n", X);
+    if (T == NULL)
+    {
+        return NULL;
+    }
+    if (X < T->Element)
+    {
+        T->Left = Delete(X, T->Left);
+    }
+    else if (X > T->Element)
+    {
+        T->Right = Delete(X, T->Right);
+    }
+    else if (T->Left && T->Right)
+    {
+        Position temp = FindMin(T->Right);
+        T->Element = temp->Element;
+        T->Right = Delete(T->Element, T->Right);
+    }
+    else
+    {
+        Position temp = T;
+        if (T->Left == NULL)
+        {
+            T = T->Right;
+        }
+        else if (T->Right == NULL)
+        {
+            T = T->Left;
+        }
+        free(temp);
+    }
+    if (T == NULL)
+    {
+        return T;
+    }
+    T->Height = Max(Height(T->Left), Height(T->Right)) + 1;
+    if (Height(T->Left) - Height(T->Right) > 1)
+    {
+        if (Height(T->Left->Left) >= Height(T->Left->Right))
+        {
+            T = SingleRotateWithLeft(T);
+        }
+        else
+        {
+            T = DoubleRotateWithLeft(T);
+        }
+    }
+    else if (Height(T->Right) - Height(T->Left) > 1)
+    {
+        if (Height(T->Right->Right) >= Height(T->Right->Left))
+        {
+            T = SingleRotateWithRight(T);
+        }
+        else
+        {
+            T = DoubleRotateWithRight(T);
+        }
+    }
+    T->Height = Max(Height(T->Left), Height(T->Right)) + 1;
     return T;
 }
 

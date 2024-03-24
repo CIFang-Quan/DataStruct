@@ -3,13 +3,13 @@
 #include <stdlib.h>
 
 typedef long ElementType;
-#define Infinity (30000L)
+#define Infinity 1 << 30
 
 #ifndef _BinHeap_H
 #define _BinHeap_H
 
-#define MaxTrees (14)
-#define Capacity (16383)
+#define MaxTrees 1 << 4
+#define Capacity 1 << 14
 
 struct BinNode;
 typedef struct BinNode *BinTree;
