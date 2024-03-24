@@ -8,8 +8,6 @@ struct PairNode
     Position Prev;
 };
 
-#define MaxSiblings 1000
-
 Position CompareAndLink(Position First, Position Second);
 PairHeap CombineSiblings(Position FirstSibling);
 

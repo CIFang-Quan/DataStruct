@@ -3,8 +3,8 @@
 #include <stdlib.h>
 
 typedef int ElementType;
-#define Infinity 30000
-#define NegInfinity (-30000)
+#define Infinity 1 << 30
+#define NegInfinity -1 << 30
 
 #ifndef _Splay_H
 #define _Splay_H
