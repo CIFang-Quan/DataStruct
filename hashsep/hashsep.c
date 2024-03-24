@@ -1,7 +1,5 @@
 #include "hashsep.h"
 
-#define MinTableSize (10)
-
 struct ListNode
 {
     ElementType Element;
@@ -47,7 +45,7 @@ HashTable InitializeTable(int TableSize)
 {
     HashTable H;
     int i;
-    if (TableSize < MinTableSize)
+    if (TableSize < 3)
     {
         Error("Table size too small");
         return NULL;

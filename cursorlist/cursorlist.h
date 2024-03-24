@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 typedef int ElementType;
-#define SpaceSize 100
+#define SpaceSize 1 << 6
 
 #ifndef _Cursor_H
 #define _Cursor_H

@@ -24,11 +24,11 @@ static struct SkipNode *NewNode(ElementType Elem, struct SkipNode *Right, struct
 
 SkipList Initialize(void)
 {
-    Position Tail = NewNode(INFINITY, NULL, NULL);
+    Position Tail = NewNode(Infinity, NULL, NULL);
     SkipList L = Tail;
     for (int i = 0; i < MAX_LEVEL; ++i)
     {
-        L = NewNode(INFINITY, Tail, L);
+        L = NewNode(Infinity, Tail, L);
     }
     return L;
 }
@@ -95,7 +95,7 @@ Position FindMin(SkipList L)
     {
         P = P->Down;
     }
-    if (P->Right && P->Right->Element != INFINITY)
+    if (P->Right && P->Right->Element != Infinity)
     {
         return P->Right;
     }
@@ -109,11 +109,11 @@ Position FindMax(SkipList L)
     {
         P = P->Down;
     }
-    while (P->Right && P->Right->Element != INFINITY)
+    while (P->Right && P->Right->Element != Infinity)
     {
         P = P->Right;
     }
-    if (P->Element != INFINITY)
+    if (P->Element != Infinity)
     {
         return P;
     }

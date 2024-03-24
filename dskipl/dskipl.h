@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 typedef int ElementType;
-#define MAX_LEVEL 4
-#define INFINITY (1 << 30)
+#define Infinity 1 << 30
 
 #ifndef _SkipList_H
 #define _SkipList_H
 
+#define MAX_LEVEL 1 << 2
 struct SkipNode;
 typedef struct SkipNode *Position;
 typedef struct SkipNode *SkipList;

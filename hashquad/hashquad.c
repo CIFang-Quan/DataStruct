@@ -1,7 +1,5 @@
 #include "hashquad.h"
 
-#define MinTableSize (10)
-
 enum KindOfEntry
 {
     Legitimate,
@@ -56,7 +54,7 @@ HashTable InitializeTable(int TableSize)
 {
     HashTable H;
     int i;
-    if (TableSize < MinTableSize)
+    if (TableSize < 3)
     {
         Error("Table size too small");
         return NULL;
