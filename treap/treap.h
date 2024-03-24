@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 typedef int ElementType;
-#define Infinity 32767
+#define Infinity 1 << 30
 
 #ifndef _Treap_H
 #define _Treap_H
